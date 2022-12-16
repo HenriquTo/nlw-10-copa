@@ -82,7 +82,7 @@ header {
 
     width: fit-content;
     margin-inline: auto;
-    margin-bottom: 53px;
+    margin-bottom:15px;
 
     color: #f7dd43;
 }
@@ -91,10 +91,17 @@ header {
     color: #e1e1e6;
     font-size: 18px;
     text-transform: uppercase;
+    margin-bottom: 0;
+    padding: 0;
 }
 
+.time{
+    padding: 0;
+    color: white;
+    margin: 0  0  0 38%;
+}
 .card ul li {
-    gap: 10px;
+    gap: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -110,14 +117,16 @@ header {
 
 .card h2:hover,
 .card ul li strong:hover,
-.card ul li img:hover{
+.card ul li img:hover,
+.time:hover{
     transform: scale(1.1);
     opacity: 0.5;
 }
 
 .card h2,
 .card ul li strong,
-.card ul li img {
+.card ul li img,
+.time {
     transition: transform 0.3s;
 } 
 
