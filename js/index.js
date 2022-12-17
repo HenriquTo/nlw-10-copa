@@ -44,17 +44,12 @@ createCard("01/12", "Quinta", createGame("Grupo E", "japao", "2 x 1", "espanha")
 createCard("02/12", "Sexta", createGame("Grupo G", "camaroes", "1 x 0", "brazil") + createGame("", "servia", "2 x 3", "suica") + createGame("Grupo H", "coreiaDoSul", "2 x 1", "portugal") + createGame("", "gana", "0 x 2", "uruguai")
 );
 
-
-
-
 function createPoint(bandeira, nomeBandeira, pontos, vitoria, empate, derrota) {
     return `
     
     <tbody><tr><td><h5 class="classificacao"><img src="./assets/icon-${bandeira}.svg" alt="brazil"><sup>${nomeBandeira}</sup></h5></td><td>${pontos}</td><td>3</td><td>${vitoria}</td><td>${empate}</td><td>${derrota}</td></tr></tbody>
     `    
 }
-
-
 
 let newDelay = -0.3;
 function createClassificar(grupo, point){
