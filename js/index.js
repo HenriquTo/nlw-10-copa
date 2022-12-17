@@ -1,11 +1,11 @@
-function createGame(time, player1, hour, player2) {
+function createGame(time, player1, score, player2) {
     return `
     <li class="time">
         ${time}
     </li>
     <li>
         <img src="./assets/icon-${player1}.svg" alt="${player1}"> 
-        <strong>${hour}</strong>
+        <strong>${score}</strong>
         <img src="./assets/icon-${player2}.svg" alt="${player2}">
     </li><hr>
  
@@ -42,4 +42,42 @@ createCard("30/11", "Quarta", createGame("Grupo C", "polonia", "0 x 2", "argenti
 createCard("01/12", "Quinta", createGame("Grupo E", "japao", "2 x 1", "espanha") + createGame("", "costaRica", "2 x 4", "alemanha") + createGame("Grupo F", "croacia", "0 x 0", "belgica") + createGame("", "canada", "1 x 2", "marrocos"))
 +
 createCard("02/12", "Sexta", createGame("Grupo G", "camaroes", "1 x 0", "brazil") + createGame("", "servia", "2 x 3", "suica") + createGame("Grupo H", "coreiaDoSul", "2 x 1", "portugal") + createGame("", "gana", "0 x 2", "uruguai")
-)
+);
+
+
+
+
+function createPoint(bandeira, nomeBandeira, pontos, vitoria, empate, derrota) {
+    return `
+    
+    <tbody><tr><td><h5 class="classificacao"><img src="./assets/icon-${bandeira}.svg" alt="brazil"><sup>${nomeBandeira}</sup></h5></td><td>${pontos}</td><td>3</td><td>${vitoria}</td><td>${empate}</td><td>${derrota}</td></tr></tbody>
+    `    
+}
+
+
+
+let newDelay = -0.3;
+function createClassificar(grupo, point){
+    newDelay = newDelay + 0.3
+    return `
+     <div class="card" style="animation-delay: ${newDelay}">
+     
+     <table class="classificarPontos">
+        <tr><h2> Grupo ${grupo}</h2></tr>
+        <thead><tr><td id="distancia">Equipe</td><td>Pontos</td><td>Jogos</td><td>Vitória</td><td>Empate</td><td>Derrota</td></tr></thead>
+        ${point}
+        
+     </table>
+        <hr>
+     </div>
+    `
+}
+
+document.querySelector("#classificar").innerHTML = createClassificar("A", createPoint("holanda","Holanda", "7", "2", "1", "0") + createPoint("senegal","Senegal", "6", "2", "0", "1") + createPoint("equador","Equador", "4", "1", "1", "1") + createPoint("catar","Catar", "0", "0", "0", "3")) + 
+createClassificar("B", createPoint("inglaterra","Inglaterra", "7", "2", "1", "0") + createPoint("estadosUnidos","Estados Unidos", "5", "1", "2", "0") + createPoint("iran","Irã", "3", "1", "0", "2") + createPoint("gales","Gales", "1", "0", "1", "2")) + 
+createClassificar("C", createPoint("argentina","Argentina", "6", "2", "0", "1") + createPoint("polonia","Polônia", "4", "1", "1", "1") + createPoint("mexico", "México", "4", "1", "1", "1") + createPoint("arabiaSaudita","Arábia Saudita", "3", "1", "0", "2")) + 
+createClassificar("D", createPoint("franca","França", "6", "2", "0", "1") + createPoint("australia","Austrália", "6", "2", "0", "1") + createPoint("tunisia", "Tunísia", "4", "1", "1", "1") + createPoint("dinamarca","Dinamarca", "1", "0", "1", "2")) + 
+createClassificar("E", createPoint("japao","Japão", "6", "2", "0", "1") + createPoint("espanha","Espanha", "4", "1", "1", "1") + createPoint("alemanha", "Alemanha", "4", "1", "1", "1") + createPoint("costaRica","Costa Rica", "3", "1", "0", "2")) +
+ createClassificar("F", createPoint("marrocos","Marrocos", "7", "1", "0", "1") + createPoint("croacia","Croácia", "5", "1", "2", "0") + createPoint("belgica", "Bélgica", "4", "1", "1", "1") + createPoint("canada","Canadá", "0", "0", "0", "3")) +
+createClassificar("G", createPoint("brazil","Brasil", "6", "2", "0", "1") + createPoint("suica","Suiça", "6", "2", "0", "1") + createPoint("camaroes", "Camarões", "4", "1", "1", "1") + createPoint("servia","Sérvia", "1", "0", "1", "2")) +  
+createClassificar("H", createPoint("portugal","Portugal", "6", "2", "0", "1") + createPoint("coreiaDoSul","Coreia Do Sul", "4", "1", "1", "1") + createPoint("uruguai", "Uruguai", "4", "1", "1", "1") + createPoint("gana","Gana", "3", "1", "0", "2"))
