@@ -46,11 +46,17 @@ body * {
     font-family: 'Roboto', sans-serif;
 }
 
+.container {
+    color: #e1e1e6;
+}
+
+/*Fase de grupo*/
 #app {
     width: fit-content;
     margin: auto;
     padding-top: 52px;
 }
+
 
 header {
     margin-bottom: 63px;
@@ -136,9 +142,7 @@ header {
     transition: transform 0.3s;
 }
 
-
-
-
+/* Classificação */
 .classificacao {
     text-transform: uppercase;
    text-align: start;
@@ -165,6 +169,61 @@ header {
 
 .classificarPontos td{
     padding-right: 25px;
+}
+
+
+
+
+/*Mata-mata*/
+#oitavas, 
+#quartas,
+#semi,
+#final{
+    display: inline-block;  
+}
+
+#terceiro div:nth-child(2){
+    display: inline-flex;
+
+}
+
+#quartas div:nth-child(2){
+    margin: 45px 10px 85px 10px;
+}
+
+#semi div:nth-child(2){
+    margin: 125px 10px 225px 10px;
+}
+
+#final div:nth-child(2){
+    margin: 265px 0;
+}
+
+
+.cardi {
+    padding: 5px 0;
+    background: var(--card-bg-color);
+    border: 2px solid var(--card-color-primary);
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+#cardiUm{
+    padding: 0 130px 0 0;
+    margin: 0;
+    font-size: 1px;
+    opacity: 0;
+}
+
+
+.cardi img{
+    width: 18px;
+    margin-right: 5px;
+}
+
+.last{
+    color:#e1e1e6;
+    font-size: 16px;
 }
 
 .card{
