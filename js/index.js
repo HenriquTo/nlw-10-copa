@@ -111,7 +111,7 @@ createSeassonLast ("", createoitavas("marrocos", "Marrocos", "1") + createoitava
 document.querySelector("#semi").innerHTML = createSeassonLast ("Semifinais", createoitavas("argentina", "Argentina", "3") + createoitavas("croacia", "Croácia", "0")) +
 createSeassonLast ("", createoitavas("franca", "França", "2 ") + createoitavas("marrocos", "Marrocos", "0")) 
 
-document.querySelector("#final").innerHTML = createSeassonLast ("Final", createoitavas("argentina", "Argentina", "x") + createoitavas("franca", "França", "x"))
+document.querySelector("#final").innerHTML = createSeassonLast ("Final", createoitavas("argentina", "Argentina", "3 (4)") + createoitavas("franca", "França", "3 (2)"))
 
 document.querySelector("#terceiro").innerHTML = createSeassonLast ("Terceiro lugar", createoitavas("croacia", "Croácia", "2") + createoitavas("marrocos", "Marrocos", "1")) 
 

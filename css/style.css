@@ -226,7 +226,7 @@ header {
     font-size: 16px;
 }
 
-.card{
+.card, .cardi{
     animation: appear 1s forwards;
 
 }
@@ -252,12 +252,10 @@ header {
 @media (min-width: 1500px) {
     .classificarPontos {
         max-width: 560px;
-        color: #047c3f;
-        
-
+        color: #047c3f; 
         
     }
-    
+
     #distancia{
         max-width: 560px;
         padding-right: 50px;
@@ -267,5 +265,14 @@ header {
         max-width: 560px;
 
         padding-right: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    
+    #bloco {
+        flex-direction: row;
+        white-space: nowrap;
+        display: inline-block;
     }
 }
