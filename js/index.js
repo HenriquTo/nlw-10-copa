@@ -170,7 +170,7 @@ function creatInformationFinale(champion) {
 
 function creatInformation(title, moreTitle) {
     return `
-     <div class="endCard">
+     <div class="endCard" style="background-image: url(./assets/card-blue.svg)">
      
      <div>
      ${moreTitle}
