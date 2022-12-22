@@ -25,6 +25,8 @@ body.green {
 ul {
     list-style: none;
 }
+
+
 .card hr {
     opacity: 0.2;
 }
@@ -46,27 +48,31 @@ body * {
 /*Pagina inicial*/
 #menu {
     color: #e1e1e6;
-    position: absolute;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 #menuUm {
-    list-style: none;
-    gap: 10px;
-    margin-right: 15px;
+    align-items: center;
+    display: flex; 
+    justify-content:center;
+    z-index: 2; 
+    width: 100%; 
 }
 
-button{
+button {
     color: #e1e1e6;
     background: none;
     cursor: pointer;
-    border: 1px solid #e1e1e6;
+    border: 1px solid #e1e1e646;
     padding: 10px;
     border-radius: 20px;
     font-size: 16px;
+    margin-right: 1rem;
 }
 button:hover{
-    color:#047c3f;
+    opacity: .5;
+    color:#5eda0b;
 }
 
 /*Fase de grupo*/
@@ -75,20 +81,11 @@ header {
     margin-bottom: 63px;
     text-align: center;
 }
-#cards {
+#cards, 
+#classificar, 
+#bloco {
     display: none;
     flex-wrap: wrap;
-}
-#classificar {
-    display: none;
-    flex-direction: column;
-    font-size: 10px;
-    flex-wrap: wrap;
-
-}
-#bloco{
-    display: none;
-    margin-left: 25px;
 }
 
 .card {
@@ -98,7 +95,7 @@ header {
     border-bottom: 2px solid var(--card-color-primary);
     border-radius: 6px;
 }
-.card h2 {
+.card h2, .cardTwo h2 {
     display: flex;
     gap: 5px;
     justify-content: center;
@@ -150,6 +147,14 @@ header {
 }
 
 /* Classificação */
+.cardTwo {  
+    padding: 32px 23px;
+    text-align: center;
+    background: var(--card-bg-color);
+    margin: auto;
+    border-bottom: 2px solid var(--card-color-primary);
+    border-radius: 6px;
+}
 .classificacao {
     text-transform: uppercase;
    text-align: start;
@@ -163,7 +168,7 @@ header {
     color:#e1e1e6;
     font-family: sans-serif;
     font-size: 14px;
-    width: fit-content;
+    
 }
 
 #distancia{
@@ -171,6 +176,7 @@ header {
 }
 .classificarPontos td{
     padding-right: 25px;
+
 }
 
 /*Mata-mata*/
@@ -180,9 +186,7 @@ header {
 #final{
     display: inline-block;  
 }
-#terceiro div:nth-child(2){
-    display: inline-flex;
-}
+
 #quartas div:nth-child(2){
     margin: 45px 10px 85px 10px;
 }
@@ -213,9 +217,25 @@ header {
     color:#e1e1e6;
     font-size: 16px;
 }
-.card, .cardi{
+.card, .cardi, .cardTwo{
     animation: appear 1s forwards;
 }
+
+/*Principal*/
+main{
+    color: #e1e1e6;
+    position: relative;
+    opacity: .6;
+    margin: 0 25px 0 30px;
+    align-items: flex-start;}
+main h3 {
+    text-align: center;
+    margin: 15px 0 10px 0;
+    
+}
+
+
+
 @keyframes appear {
     0% {
         transform: translateY(-50px);
@@ -234,21 +254,37 @@ header {
         flex-direction: row;
         margin-left: 10px;
     }
-
-}
-@media (max-width:899px) and (min-width: 100px) {
-    #cards{
+    .cardTwo{
         flex-direction: column;
         gap: 32px;
-        flex-direction: row;
+        margin: 10px;
         margin-left: 10px;
     }
+
+}
+@media (max-width:899px) {
+    #cards{
+        flex-direction: row;
+        gap: 32px;
+        margin-top: 10px;
+        margin-left: 10px;
+        justify-content: space-around;   
+    }
+
+    .cardTwo{
+        flex-direction: column;
+        gap: 32px;
+        margin: 10px;
+        margin-left: 10px;
+        
+    }
+
 }
 
 @media (max-width: 800px) {
     #bloco {
-        flex-direction: row;
+        flex-direction: column;
         white-space: nowrap;
-        display: inline-block;
     }
+    
 }

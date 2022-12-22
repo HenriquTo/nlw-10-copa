@@ -1,7 +1,7 @@
+var menu = document.querySelector('#menu')
 var btn = document.querySelector('.show-or-hide');
 var btnOne = document.querySelector('.show-or-hide-one');
 var btnTwo = document.querySelector('.show-or-hide-two');
-
 
 var hide = document.querySelector("#classificar");
 var hideOne = document.querySelector("#cards");
@@ -11,26 +11,27 @@ var hideTwo = document.querySelector("#bloco");
 
 btn.addEventListener('click', function() {
 
+
     if(hide.style.display === 'flex') {
-        hide.style.display = 'none';
+        (hide.style.display = 'none') + (hideOne.style.display = 'none') + (hideTwo.style.display = 'none') ;
     } else {
-        hide.style.display = 'flex';
+        (hide.style.display = 'flex') + (hideOne.style.display = 'none') + (hideTwo.style.display = 'none');
     }
 });
 btnOne.addEventListener('click', function() {
 
     if(hideOne.style.display === 'flex') {
-        hideOne.style.display = 'none';
+        hideOne.style.display = 'none' + (hide.style.display = 'none') + (hideTwo.style.display = 'none');
     } else {
-        hideOne.style.display = 'flex';
+        (hideOne.style.display = 'flex') + (hide.style.display = 'none') + (hideTwo.style.display = 'none');
     }
 });
 btnTwo.addEventListener('click', function() {
 
     if(hideTwo.style.display === 'inline-block') {
-        hideTwo.style.display = 'none';
+        (hideTwo.style.display = 'none') + (hide.style.display = 'none') + (hideOne.style.display = 'none');
     } else {
-        hideTwo.style.display = 'inline-block';
+        (hideTwo.style.display = 'inline-block') + (hideOne.style.display = 'none') + (hide.style.display = 'none');
     }
 });
 
@@ -83,9 +84,10 @@ function createClassificar(grupo, point){
     newDelay = newDelay + 0.3
     return `
     
-     <div class="card"  style="animation-delay: ${newDelay}">
+     <div class="cardTwo"  style="animation-delay: ${newDelay}">
      <table class="classificarPontos">
         <tr><h2> Grupo ${grupo}</h2></tr>
+        <hr>
         <thead><tr><td id="distancia">Equipe</td><td>Pontos</td><td>Jogos</td><td>Vitória</td><td>Empate</td><td>Derrota</td></tr></thead>
         ${point}
      </table>
@@ -137,19 +139,16 @@ createSeassonLast ("", createoitavas("inglaterra", "Inglaterra", "3") + createoi
 createSeassonLast ("", createoitavas("marrocos", "Marrocos", "0 (3)") + createoitavas( "espanha", "Espanha", "0 (0)")) +
 createSeassonLast ("", createoitavas("portugal", "Portugal", "6") + createoitavas( "suica", "Suiça", "1"))
 
-
 document.querySelector("#quartas").innerHTML = createSeassonLast ("Quartas de Final", createoitavas("holanda", "Holanda", "2 (3)") + createoitavas("argentina", "Argentina", "2 (4)")) +
 createSeassonLast ("", createoitavas("croacia", "Croácia", "1 (4)") + createoitavas("brazil", "Brasil", "1 (2)")) +
 createSeassonLast ("", createoitavas("inglaterra", "Inglaterra", "1") + createoitavas("franca", "França", "2")) + 
 createSeassonLast ("", createoitavas("marrocos", "Marrocos", "1") + createoitavas("portugal", "Portugal", "0"))
-
 
 document.querySelector("#semi").innerHTML = createSeassonLast ("Semifinais", createoitavas("argentina", "Argentina", "3") + createoitavas("croacia", "Croácia", "0")) +
 createSeassonLast ("", createoitavas("franca", "França", "2 ") + createoitavas("marrocos", "Marrocos", "0")) 
 
 document.querySelector("#final").innerHTML = createSeassonLast ("Final", createoitavas("argentina", "Argentina", "3 (4)") + createoitavas("franca", "França", "3 (2)"))
 
-document.querySelector("#terceiro").innerHTML = createSeassonLast ("Terceiro lugar", createoitavas("croacia", "Croácia", "2") + createoitavas("marrocos", "Marrocos", "1"));
 
 
 
