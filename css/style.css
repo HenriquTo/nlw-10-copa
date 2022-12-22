@@ -83,9 +83,13 @@ header {
 }
 #cards, 
 #classificar, 
-#bloco {
+#bloco,
+#creat{
     display: none;
     flex-wrap: wrap;
+}
+.show{
+    display: block;
 }
 
 .card {
@@ -221,6 +225,43 @@ header {
     animation: appear 1s forwards;
 }
 
+/*Curiosidades*/
+.endCard { 
+    width: 300px;
+    height: 450px;
+    justify-content: space-between;
+    align-items: center; 
+    background-image: url(/assets/card-blue.svg);
+    padding: 80px;
+}
+.endCard h1{
+    padding: 45px 0 0 0; 
+    margin-top: 30px;
+}
+.endCard p {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.endCard:nth-child(2){
+    padding: 90px 0 0 40px;
+}
+.endCard:nth-child(2) h1 {
+    padding: 80px 10% 0 0;
+    margin: 20px 0px 20px 0;
+    font-size: 20px;
+}
+.endCard:nth-child(3),
+.endCard:nth-child(4){
+    padding: 90px 30px 0 50px;
+}
+.endCard:nth-child(3) h1{
+    margin-top: 105px;    
+}
+
+.endCard:nth-child(4) h1{
+    margin-top: 90px;    
+}
 /*Principal*/
 main{
     color: #e1e1e6;
@@ -233,9 +274,6 @@ main h3 {
     margin: 15px 0 10px 0;
     
 }
-
-
-
 @keyframes appear {
     0% {
         transform: translateY(-50px);
@@ -245,7 +283,6 @@ main h3 {
         opacity: 1;
     }
 }
-
 /*Responsividade*/
 @media (max-width: 1400px) and (min-width: 900px) {
     #cards{

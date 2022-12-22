@@ -1,11 +1,13 @@
-var menu = document.querySelector('#menu')
 var btn = document.querySelector('.show-or-hide');
 var btnOne = document.querySelector('.show-or-hide-one');
 var btnTwo = document.querySelector('.show-or-hide-two');
+var btnThree = document.querySelector('.show-or-hide-three');
 
 var hide = document.querySelector("#classificar");
 var hideOne = document.querySelector("#cards");
 var hideTwo = document.querySelector("#bloco");
+var hideThree = document.querySelector("#creat");
+var show = document.querySelector(".show");
 
 
 
@@ -13,25 +15,33 @@ btn.addEventListener('click', function() {
 
 
     if(hide.style.display === 'flex') {
-        (hide.style.display = 'none') + (hideOne.style.display = 'none') + (hideTwo.style.display = 'none') ;
+        (hide.style.display = 'none') + (hideOne.style.display = 'none') + (hideTwo.style.display = 'none') + (hideThree.style.display = 'none') + (show.style.display = 'block');
     } else {
-        (hide.style.display = 'flex') + (hideOne.style.display = 'none') + (hideTwo.style.display = 'none');
+        (hide.style.display = 'flex') + (hideOne.style.display = 'none') + (hideTwo.style.display = 'none') + (hideThree.style.display = 'none') +  (show.style.display = 'none') ;
     }
 });
 btnOne.addEventListener('click', function() {
 
     if(hideOne.style.display === 'flex') {
-        hideOne.style.display = 'none' + (hide.style.display = 'none') + (hideTwo.style.display = 'none');
+        (hideOne.style.display = 'none') + (hide.style.display = 'none') + (hideTwo.style.display = 'none') + (hideThree.style.display = 'none') + (show.style.display = 'block');
     } else {
-        (hideOne.style.display = 'flex') + (hide.style.display = 'none') + (hideTwo.style.display = 'none');
+        (hideOne.style.display = 'flex') + (hide.style.display = 'none') + (hideTwo.style.display = 'none') + (hideThree.style.display = 'none') + (show.style.display = 'none');
     }
 });
 btnTwo.addEventListener('click', function() {
 
     if(hideTwo.style.display === 'inline-block') {
-        (hideTwo.style.display = 'none') + (hide.style.display = 'none') + (hideOne.style.display = 'none');
+        (hideTwo.style.display = 'none') + (hide.style.display = 'none') + (hideOne.style.display = 'none') + (hideThree.style.display = 'none') + (show.style.display = 'block');
     } else {
-        (hideTwo.style.display = 'inline-block') + (hideOne.style.display = 'none') + (hide.style.display = 'none');
+        (hideTwo.style.display = 'inline-block') + (hideOne.style.display = 'none') + (hideThree.style.display = 'none') + (hide.style.display = 'none') + (show.style.display = 'none');
+    }
+});
+btnThree.addEventListener('click', function() {
+
+    if(hideThree.style.display === 'flex') {
+        (hideThree.style.display = 'none') + (hide.style.display = 'none') + (hideOne.style.display = 'none') + (hideTwo.style.display = 'none') +  (show.style.display = 'block');
+    } else {
+        (hideThree.style.display = 'flex') + (hide.style.display = 'none') + (hideOne.style.display = 'none') + (hideTwo.style.display = 'none')  + (show.style.display = 'none');
     }
 });
 
@@ -57,6 +67,8 @@ function createCard(date, day, games){
      </ul>
      </div>   `
 }
+
+
 
 hideOne.innerHTML = createCard("20/11", "Domingo", createGame("Grupo A", "catar", "0 x 2", "equador")) +
 createCard("21/11", "Segunda", createGame("Grupo A", "senegal", "0 x 2", "holanda") + createGame("Grupo B", "inglaterra", "6 x 2", "iran") + createGame(" ", "estadosUnidos", "1 x 1", "gales")) +
@@ -147,7 +159,33 @@ createSeassonLast ("", createoitavas("marrocos", "Marrocos", "1") + createoitava
 document.querySelector("#semi").innerHTML = createSeassonLast ("Semifinais", createoitavas("argentina", "Argentina", "3") + createoitavas("croacia", "Croácia", "0")) +
 createSeassonLast ("", createoitavas("franca", "França", "2 ") + createoitavas("marrocos", "Marrocos", "0")) 
 
-document.querySelector("#final").innerHTML = createSeassonLast ("Final", createoitavas("argentina", "Argentina", "3 (4)") + createoitavas("franca", "França", "3 (2)"))
+document.querySelector("#final").innerHTML = createSeassonLast ("Final", createoitavas("argentina", "Argentina", "3 (4)") + createoitavas("franca", "França", "3 (2)"));
+
+
+function creatInformationFinale(champion) {
+    return `
+    <p>${champion}</p>
+    `
+}
+
+function creatInformation(title, moreTitle) {
+    return `
+     <div class="endCard">
+     
+     <div>
+     ${moreTitle}
+     
+    </div>
+    <h1>${title}</h1>
+    </div>   `
+}
+
+
+
+hideThree.innerHTML = creatInformation("Campeões", creatInformationFinale("Brasil (5)") + creatInformationFinale("Alemanha (4)") + creatInformationFinale("Itália (4)") + creatInformationFinale("Argentina (3)") + creatInformationFinale("França (2)") + creatInformationFinale("Uruguai (2)") + creatInformationFinale("Espanha (1)") + creatInformationFinale("Inglaterra (1)")) + 
+ creatInformation("A Copa do Mundo de 2022 foi a sexta disputada neste século. ", creatInformationFinale("Campeões de 2002: Brasil") + creatInformationFinale(" Campeões de 2006: Itália ") + creatInformationFinale("Campeões de 2010: Espanha") + creatInformationFinale("Campeões de 2014: Alemanha") + creatInformationFinale("Campeões de 2018: França") + creatInformationFinale("Campeões de 2022: Argentina")) +
+ creatInformation("Lionel Messi", creatInformationFinale("Messi é um jogador argentino que atua como atacante. Atualmente joga pelo Paris Saint-Germain e pela Seleção Argentina, onde atuando como capitão venceu a Copa do Mundo do Catar de 2022.")) + 
+ creatInformation("Mbappé", creatInformationFinale("Apesar de perder o título na final, o atacante foi o artilheiro isolado da edição do Qatar e entrou no grupo dos maiores goleadores da história do torneio. Mbappé soma 12 gols em 14 partidas de Copa do Mundo"));
 
 
 
@@ -156,4 +194,7 @@ document.querySelector("#final").innerHTML = createSeassonLast ("Final", createo
 
 
 
+
+
+ 
 
